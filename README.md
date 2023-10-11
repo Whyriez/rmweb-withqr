@@ -7,3 +7,10 @@ cara install :
 - copy file .env-example ke .env dengan perintah = cp .env-example .env
 - lakukan generate key dengan perintah = php artisan key:generate
 - jalankan project dengan perintah = php artisan serve
+
+
+cara commit ke branch :
+- lakukan pindah brach dengan perintah : git checkout -b nama_branch
+
+cara mendapatkan update terbaru dari project :
+- lakukan pindah branch dan ketik perintah = git pull
