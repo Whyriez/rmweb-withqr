@@ -10,7 +10,8 @@ cara install :
 
 
 cara commit ke branch :
-- lakukan pindah brach dengan perintah : git checkout -b nama_branch
+- lakukan pindah branch dengan perintah : git checkout -b nama_branch
+- jika perintah sebelumnya terdapat kata error exist maka ganti sebagai berikut : git checkout nama_branch
 
 cara mendapatkan update terbaru dari project :
 - lakukan pindah branch dan ketik perintah = git pull
