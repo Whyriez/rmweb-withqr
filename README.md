@@ -8,6 +8,7 @@ cara install :
 - copy file .env.example ke .env dengan perintah = cp .env-example .env
 - lakukan generate key dengan perintah = php artisan key:generate
 - jalankan project dengan perintah = php artisan serve
+- buka terminal baru juga dan jalankan perintah = npm run dev
 
 
 cara commit ke branch :
