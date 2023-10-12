@@ -19,7 +19,7 @@
 
 </head>
 
-<body>
+<body class="bg-white dark:bg-gray-900">
     <main class="mx-auto lg:max-w-7xl md:px-8 flex flex-col min-h-screen bg-white dark:bg-gray-900">
         {{-- @include('components.header') --}}
         @include('components.Navbar')
