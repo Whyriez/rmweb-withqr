@@ -15,7 +15,7 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     @vite('resources/css/app.css')
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+
 
 </head>
 
@@ -26,6 +26,8 @@
         @yield('content')
         @include('components.footer')
     </main>
+
+    <script src="{{ asset('assets/js/flowbite.min.js') }}"></script>
 </body>
 
 </html>
