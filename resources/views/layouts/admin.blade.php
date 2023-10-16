@@ -8,6 +8,10 @@
     <title>@yield('title')</title>
     <base href="{{ \URL::to('/') }}">
 
+    <!-- fontawsome -->
+    <link rel="stylesheet" href="https://cdn.fontawesome.com/6.0.0-beta3/cs s/all.min.css">
+
+
     <link rel="icon" type="image/x-icon" href="{{ asset('faviconnsss.ico') }}">
 
     <!-- Fonts -->
