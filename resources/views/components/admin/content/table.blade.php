@@ -1,3 +1,6 @@
+@props(['menu'])
+
+
 <div class="relative overflow-x-auto">
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
@@ -31,7 +34,7 @@
                     path
                 </td>
                 <td class="px-6 py-4">
-                    makanan
+                    {{ $menu }}
                 </td>
                 <td class="px-6 py-4  text-center">
                     <button type="button" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800  font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 ">Detail</button>

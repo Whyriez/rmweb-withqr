@@ -2,7 +2,6 @@
 @section('title', 'Dashboard')
 
 @section('content')
-    <div class="text-white">
-        @include('components.admin.content.table')
-        </div>
+   
+    <x-admin.content.table menu="Minuman"/>
 @endsection
