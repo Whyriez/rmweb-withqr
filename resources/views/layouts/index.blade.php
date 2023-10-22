@@ -19,10 +19,10 @@
 
 </head>
 
-<body class="bg-white dark:bg-gray-900">
-    <main class="mx-auto lg:max-w-7xl md:px-8 flex flex-col min-h-screen bg-white dark:bg-gray-900">
+<body class="bg-white">
+    @include('components.Navbar')
+    <main class="mx-auto lg:max-w-7xl md:px-8 flex flex-col min-h-screen bg-white">
         {{-- @include('components.header') --}}
-        @include('components.Navbar')
         @yield('content')
         @include('components.footer')
     </main>

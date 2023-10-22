@@ -7,30 +7,30 @@
 
             <div id="controls-carousel" class="relative w-full" data-carousel="slide">
                 <!-- Carousel wrapper -->
-                <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+                <div class="relative h-56 overflow-hidden rounded-lg md:h-[552px]">
                     <!-- Item 1 -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="{{ asset('assets/img/didin.png') }}"
+                        <img src="{{ asset('assets/img/makanan1.jpg') }}"
                             class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                     </div>
                     <!-- Item 2 -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
-                        <img src="{{ asset('assets/img/didin.png') }}"
+                        <img src="{{ asset('assets/img/makanan2.jpg') }}"
                             class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                     </div>
                     <!-- Item 3 -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="{{ asset('assets/img/didin.png') }}"
+                        <img src="{{ asset('assets/img/makanan3.jpg') }}"
                             class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                     </div>
                     <!-- Item 4 -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="{{ asset('assets/img/didin.png') }}"
+                        <img src="{{ asset('assets/img/makanan4.jpg') }}"
                             class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                     </div>
                     <!-- Item 5 -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                        <img src="{{ asset('assets/img/didin.png') }}"
+                        <img src="{{ asset('assets/img/makanan5.jpg') }}"
                             class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
                     </div>
                 </div>
@@ -63,31 +63,138 @@
                 </button>
             </div>
 
-            <h1 class="text-gray-800 dark:text-white">Hai ALimxxxxx</h1>
-
-            <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <a href="#">
-                    <img class="rounded-t-lg" src="{{ asset('assets/img/didin.png') }}" alt="" />
+            <div class="text-center text-black text-[32px] md:text-[100px] font-black font-inter pt-8">Selamat Datang Di Wong Solo</div>
+            <div class="flex justify-center pt-8">
+                <div class="inline-flex rounded-md shadow-sm">
+                <a href="#" aria-current="page" class="px-4 py-2 text-sm font-medium text-blue-700 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 ">
+                    Semua
                 </a>
-                <div class="p-5">
-                    <a href="#">
-                        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
-                            technology acquisitions 2021</h5>
-                    </a>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology
-                        acquisitions of 2021 so far, in reverse chronological order.</p>
-                    <a href="#"
-                        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        Read more
-                        <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 14 10">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M1 5h12m0 0L9 1m4 4L9 9" />
-                        </svg>
-                    </a>
+                <a href="#" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 ">
+                    Makanan
+                </a>
+                <a href="#" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 ">
+                    Minuman
+                </a>
                 </div>
             </div>
-
+            <!-- wrapper menu -->
+            <div class="flex flex-col lg:flex-row gap-3 pt-8 items-center lg:flex-wrap">
+                <!-- Menu  -->
+                <div>
+                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+                        <a href="#">
+                            <img class="rounded-t-lg" src="{{ asset('assets/img/makanan3.jpg') }}" alt="" />
+                        </a>
+                        <div class="p-5">
+                            <a href="#">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center ">French Fries</h5>
+                            </a>
+                            <p class="mb-3 font-normal text-gray-700 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sequi nisi recusandae doloremque quisquam debitis quae alias obcaecati cumque nihil.</p>
+                            <div class="flex justify-between">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900  ">Rp 100.000</h5>
+                                <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-300 rounded-full hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-blue-300 2-">
+                                    <img src="{{ asset('assets/img/plus.svg') }}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+                        <a href="#">
+                            <img class="rounded-t-lg" src="{{ asset('assets/img/makanan3.jpg') }}" alt="" />
+                        </a>
+                        <div class="p-5">
+                            <a href="#">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center ">French Fries</h5>
+                            </a>
+                            <p class="mb-3 font-normal text-gray-700 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sequi nisi recusandae doloremque quisquam debitis quae alias obcaecati cumque nihil.</p>
+                            <div class="flex justify-between">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900  ">Rp 100.000</h5>
+                                <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-300 rounded-full hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-blue-300 2-">
+                                    <img src="{{ asset('assets/img/plus.svg') }}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+                        <a href="#">
+                            <img class="rounded-t-lg" src="{{ asset('assets/img/makanan3.jpg') }}" alt="" />
+                        </a>
+                        <div class="p-5">
+                            <a href="#">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center ">French Fries</h5>
+                            </a>
+                            <p class="mb-3 font-normal text-gray-700 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sequi nisi recusandae doloremque quisquam debitis quae alias obcaecati cumque nihil.</p>
+                            <div class="flex justify-between">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900  ">Rp 100.000</h5>
+                                <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-300 rounded-full hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-blue-300 2-">
+                                    <img src="{{ asset('assets/img/plus.svg') }}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+                        <a href="#">
+                            <img class="rounded-t-lg" src="{{ asset('assets/img/jus.jpg') }}" alt="" />
+                        </a>
+                        <div class="p-5">
+                            <a href="#">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center ">Jus Mangga</h5>
+                            </a>
+                            <p class="mb-3 font-normal text-gray-700 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sequi nisi recusandae doloremque quisquam debitis quae alias obcaecati cumque nihil.</p>
+                            <div class="flex justify-between">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900  ">Rp 100.000</h5>
+                                <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-300 rounded-full hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-blue-300 2-">
+                                    <img src="{{ asset('assets/img/plus.svg') }}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+                        <a href="#">
+                            <img class="rounded-t-lg" src="{{ asset('assets/img/jus.jpg') }}" alt="" />
+                        </a>
+                        <div class="p-5">
+                            <a href="#">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center ">Jus Mangga</h5>
+                            </a>
+                            <p class="mb-3 font-normal text-gray-700 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sequi nisi recusandae doloremque quisquam debitis quae alias obcaecati cumque nihil.</p>
+                            <div class="flex justify-between">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900  ">Rp 100.000</h5>
+                                <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-300 rounded-full hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-blue-300 2-">
+                                    <img src="{{ asset('assets/img/plus.svg') }}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+                        <a href="#">
+                            <img class="rounded-t-lg" src="{{ asset('assets/img/jus.jpg') }}" alt="" />
+                        </a>
+                        <div class="p-5">
+                            <a href="#">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center ">Jus Mangga</h5>
+                            </a>
+                            <p class="mb-3 font-normal text-gray-700 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sequi nisi recusandae doloremque quisquam debitis quae alias obcaecati cumque nihil.</p>
+                            <div class="flex justify-between">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900  ">Rp 100.000</h5>
+                                <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-300 rounded-full hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-blue-300 2-">
+                                    <img src="{{ asset('assets/img/plus.svg') }}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
