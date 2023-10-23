@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tb_makanan', function (Blueprint $table) {
+        Schema::create('table_menu', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_makanan');
-            $table->string('path');
+            $table->string('Menu');
+            $table->string('gambar');
             $table->string('kategori');
-            $table->integer('harga')->default(0);
+            $table->integer('harga');
             $table->timestamps();
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tb_makanan');
+        Schema::dropIfExists('table_menu');
     }
 };

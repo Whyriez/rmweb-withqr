@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [UserController::class, 'index'])->name('home');
-Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+// Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::get('/admin', [AdminController::class, 'show'])->name('admin');
+Route::post('/admin', [AdminController::class, 'store'])->name('admin');
+Route::put('/admin/edit/{id}', [AdminController::class, 'edit'])->name('/admin/edit/{id}');
+Route::get('/admin/update', [AdminController::class, 'update'])->name('/admin/update');
+Route::get('/admin/delete/{id}', [AdminController::class, 'destroy'])->name('/admin/delete/{id}');

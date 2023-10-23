@@ -9,6 +9,7 @@
                 <!-- Carousel wrapper -->
                 <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
                     <!-- Item 1 -->
+                    <h1></h1>
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
                         <img src="{{ asset('assets/img/didin.png') }}"
                             class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
