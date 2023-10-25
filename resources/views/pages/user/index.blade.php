@@ -64,35 +64,35 @@
                 </button>
             </div>
 
-            <div class="text-center text-black text-[32px] md:text-[100px] font-black font-inter pt-8">Selamat Datang Di Wong Solo</div>
-            <div class="flex justify-center pt-8">
+            <div class="text-center text-black text-[32px] md:text-[64px] lg:text-[100px] font-black font-inter pt-8 dark:text-white">Selamat Datang Di Wong Solo</div>
+            <div class="flex justify-center pt-8" id="menu">
                 <div class="inline-flex rounded-md shadow-sm">
-                <a href="#" aria-current="page" class="px-4 py-2 text-sm font-medium text-blue-700 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 ">
+                <a href="#" aria-current="page" class="px-4 py-2 text-sm font-medium text-blue-700 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
                     Semua
                 </a>
-                <a href="#" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 ">
+                <a href="#" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
                     Makanan
                 </a>
-                <a href="#" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 ">
+                <a href="#" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
                     Minuman
                 </a>
                 </div>
             </div>
             <!-- wrapper menu -->
-            <div class="flex flex-col lg:flex-row gap-3 pt-8 items-center lg:flex-wrap">
+            <div class="flex flex-col lg:flex-row gap-3 pt-8 items-center lg:justify-center lg:flex-wrap">
                 <!-- Menu  -->
                 <div>
-                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
                             <img class="rounded-t-lg" src="{{ asset('assets/img/makanan3.jpg') }}" alt="" />
                         </a>
                         <div class="p-5">
                             <a href="#">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center ">French Fries</h5>
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center dark:text-white ">French Fries</h5>
                             </a>
-                            <p class="mb-3 font-normal text-gray-700 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sequi nisi recusandae doloremque quisquam debitis quae alias obcaecati cumque nihil.</p>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sequi nisi recusandae doloremque quisquam debitis quae alias obcaecati cumque nihil.</p>
                             <div class="flex justify-between">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900  ">Rp 100.000</h5>
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Rp 100.000</h5>
                                 <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-300 rounded-full hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-blue-300 2-">
                                     <img src="{{ asset('assets/img/plus.svg') }}" alt="">
                                 </a>
@@ -100,18 +100,19 @@
                         </div>
                     </div>
                 </div>
+                <!-- Menu 2 -->
                 <div>
-                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
                             <img class="rounded-t-lg" src="{{ asset('assets/img/makanan3.jpg') }}" alt="" />
                         </a>
                         <div class="p-5">
                             <a href="#">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center ">French Fries</h5>
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center dark:text-white ">French Fries</h5>
                             </a>
-                            <p class="mb-3 font-normal text-gray-700 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sequi nisi recusandae doloremque quisquam debitis quae alias obcaecati cumque nihil.</p>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sequi nisi recusandae doloremque quisquam debitis quae alias obcaecati cumque nihil.</p>
                             <div class="flex justify-between">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900  ">Rp 100.000</h5>
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Rp 100.000</h5>
                                 <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-300 rounded-full hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-blue-300 2-">
                                     <img src="{{ asset('assets/img/plus.svg') }}" alt="">
                                 </a>
@@ -119,18 +120,19 @@
                         </div>
                     </div>
                 </div>
+                <!-- Menu 3 -->
                 <div>
-                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
                             <img class="rounded-t-lg" src="{{ asset('assets/img/makanan3.jpg') }}" alt="" />
                         </a>
                         <div class="p-5">
                             <a href="#">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center ">French Fries</h5>
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center dark:text-white ">French Fries</h5>
                             </a>
-                            <p class="mb-3 font-normal text-gray-700 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sequi nisi recusandae doloremque quisquam debitis quae alias obcaecati cumque nihil.</p>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sequi nisi recusandae doloremque quisquam debitis quae alias obcaecati cumque nihil.</p>
                             <div class="flex justify-between">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900  ">Rp 100.000</h5>
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Rp 100.000</h5>
                                 <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-300 rounded-full hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-blue-300 2-">
                                     <img src="{{ asset('assets/img/plus.svg') }}" alt="">
                                 </a>
@@ -138,18 +140,19 @@
                         </div>
                     </div>
                 </div>
+                <!-- Menu 4 -->
                 <div>
-                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
                             <img class="rounded-t-lg" src="{{ asset('assets/img/jus.jpg') }}" alt="" />
                         </a>
                         <div class="p-5">
                             <a href="#">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center ">Jus Mangga</h5>
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center dark:text-white ">Jus Mangga</h5>
                             </a>
-                            <p class="mb-3 font-normal text-gray-700 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sequi nisi recusandae doloremque quisquam debitis quae alias obcaecati cumque nihil.</p>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sequi nisi recusandae doloremque quisquam debitis quae alias obcaecati cumque nihil.</p>
                             <div class="flex justify-between">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900  ">Rp 100.000</h5>
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Rp 100.000</h5>
                                 <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-300 rounded-full hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-blue-300 2-">
                                     <img src="{{ asset('assets/img/plus.svg') }}" alt="">
                                 </a>
@@ -157,18 +160,19 @@
                         </div>
                     </div>
                 </div>
+                <!-- menu 5 -->
                 <div>
-                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
                             <img class="rounded-t-lg" src="{{ asset('assets/img/jus.jpg') }}" alt="" />
                         </a>
                         <div class="p-5">
                             <a href="#">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center ">Jus Mangga</h5>
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center dark:text-white ">Jus Mangga</h5>
                             </a>
-                            <p class="mb-3 font-normal text-gray-700 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sequi nisi recusandae doloremque quisquam debitis quae alias obcaecati cumque nihil.</p>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sequi nisi recusandae doloremque quisquam debitis quae alias obcaecati cumque nihil.</p>
                             <div class="flex justify-between">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900  ">Rp 100.000</h5>
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Rp 100.000</h5>
                                 <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-300 rounded-full hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-blue-300 2-">
                                     <img src="{{ asset('assets/img/plus.svg') }}" alt="">
                                 </a>
@@ -176,18 +180,19 @@
                         </div>
                     </div>
                 </div>
+                <!-- menu 6 -->
                 <div>
-                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+                    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
                             <img class="rounded-t-lg" src="{{ asset('assets/img/jus.jpg') }}" alt="" />
                         </a>
                         <div class="p-5">
                             <a href="#">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center ">Jus Mangga</h5>
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 text-center dark:text-white ">Jus Mangga</h5>
                             </a>
-                            <p class="mb-3 font-normal text-gray-700 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sequi nisi recusandae doloremque quisquam debitis quae alias obcaecati cumque nihil.</p>
+                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia sequi nisi recusandae doloremque quisquam debitis quae alias obcaecati cumque nihil.</p>
                             <div class="flex justify-between">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900  ">Rp 100.000</h5>
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Rp 100.000</h5>
                                 <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-green-300 rounded-full hover:bg-green-400 focus:ring-4 focus:outline-none focus:ring-blue-300 2-">
                                     <img src="{{ asset('assets/img/plus.svg') }}" alt="">
                                 </a>
