@@ -5,24 +5,25 @@ namespace App\Http\Controllers;
 use App\Models\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
-   // public function index(){
+   public function index(){
 
-   //  return view('pages.admin.index');
-   // }
+    return view('pages.admin.index');
+   }
 
    public function show()
    {
       $data = Menu::get();
-      return view('pages.admin.index', ['Menu' => $data]);
+      return view('pages.admin.table', ['Menu' => $data]);
    }
 
    public function create()
    {
       $data = Menu::all();
-      return view('pages.admin.index');
+      return view('pages.admin.table');
    }
 
 
@@ -43,7 +44,7 @@ class AdminController extends Controller
       } else {
          $path = 'gambar kosong bang';
       }
-      dd($path);
+      // dd($path);
       Menu::create([
          'Menu' => $request->Menu,
          'gambar' => $path,
@@ -85,6 +86,11 @@ class AdminController extends Controller
    public function destroy($id)
    {
       $data = Menu::find($id);
+      $pathFile = $data->gambar;
+      if ($pathFile != null || $pathFile != '') {      
+           Storage::delete($pathFile);
+       }
+     
 
       $data->delete();
       return redirect()->route('admin')->with('sucess', 'data berhasil dihapus');

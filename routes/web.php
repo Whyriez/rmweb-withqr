@@ -16,10 +16,16 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/', [UserController::class, 'index'])->name('home');
+
 // Route::get('/admin', [AdminController::class, 'index'])->name('admin');
-Route::get('/admin', [AdminController::class, 'show'])->name('admin');
-Route::post('/admin', [AdminController::class, 'store'])->name('admin');
-Route::put('/admin/edit/{id}', [AdminController::class, 'edit'])->name('/admin/edit/{id}');
-Route::get('/admin/update', [AdminController::class, 'update'])->name('/admin/update');
-Route::get('/admin/delete/{id}', [AdminController::class, 'destroy'])->name('/admin/delete/{id}');
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+Route::get('/table', [AdminController::class, 'show'])->name('table');
+Route::post('/table', [AdminController::class, 'store'])->name('table');
+Route::put('/table/edit/{id}', [AdminController::class, 'edit'])->name('/admin/edit/{id}');
+Route::get('/table/update', [AdminController::class, 'update'])->name('/admin/update');
+Route::get('/table/delete/{id}', [AdminController::class, 'destroy'])->name('/admin/delete/{id}');
+
+
+//user
+Route::get('/', [UserController::class, 'index'])->name('home');
+Route::get('/cart/store/{id}', [UserController::class, 'cartStore'])->name('cart/store/{id}');
