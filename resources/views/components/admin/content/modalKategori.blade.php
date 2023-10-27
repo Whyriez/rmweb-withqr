@@ -95,7 +95,7 @@
                                 </td>
                                 <td
                                     class="max-w-sm p-4 overflow-hidden text-base font-medium text-gray-900 truncate xl:max-w-xs dark:text-white">
-                                    {{ $k->kategori }}
+                                    {{ $k->name }}
                                 </td>
 
                                 <td class="p-4 space-x-2 whitespace-nowrap text-center">

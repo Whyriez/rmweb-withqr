@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('tb_kategori', function (Blueprint $table) {
             $table->id();
-            $table->string('kategori');
+            $table->string('name');
             $table->timestamps();
         });
     }

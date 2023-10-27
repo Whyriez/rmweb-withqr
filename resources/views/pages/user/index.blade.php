@@ -11,27 +11,32 @@
                     <h1></h1>
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
                         <img src="{{ asset('assets/img/makanan1.jpg') }}"
-                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" loading="lazy"
+                            alt="...">
                     </div>
                     <!-- Item 2 -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
                         <img src="{{ asset('assets/img/makanan2.jpg') }}"
-                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" loading="lazy"
+                            alt="...">
                     </div>
                     <!-- Item 3 -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
                         <img src="{{ asset('assets/img/makanan3.jpg') }}"
-                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" loading="lazy"
+                            alt="...">
                     </div>
                     <!-- Item 4 -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
                         <img src="{{ asset('assets/img/makanan4.jpg') }}"
-                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" loading="lazy"
+                            alt="...">
                     </div>
                     <!-- Item 5 -->
                     <div class="hidden duration-700 ease-in-out" data-carousel-item>
                         <img src="{{ asset('assets/img/makanan5.jpg') }}"
-                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                            class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" loading="lazy"
+                            alt="...">
                     </div>
                 </div>
                 <!-- Slider controls -->
@@ -73,9 +78,9 @@
                         Semua
                     </a>
                     @foreach ($kategori as $k)
-                        <a href="{{ url('kategori/' . $k->kategori) }}"
-                            class="px-4 py-2 text-sm font-medium  @if (request()->is('kategori/' . $k->kategori)) bg-gray-200  text-blue-700 dark:bg-gray-700 @endif border border-gray-200  @if ($loop->last) rounded-r-md @endif hover:bg-gray-200 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700   dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
-                            {{ $k->kategori }}
+                        <a href="{{ url('kategori/' . $k->id) }}"
+                            class="px-4 py-2 text-sm font-medium  @if (request()->is('kategori/' . $k->id)) bg-gray-200  text-blue-700 dark:bg-gray-700 @endif border border-gray-200  @if ($loop->last) rounded-r-md @endif hover:bg-gray-200 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700   dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
+                            {{ $k->name }}
                         </a>
                     @endforeach
 
@@ -95,8 +100,8 @@
                 @foreach ($menu as $m)
                     <div
                         class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                        <img class="object-cover h-[18rem] w-full rounded-t-lg" src="{{ asset('storage/' . $m->gambar) }}"
-                            alt="" />
+                        <img class="object-cover h-[18rem] w-full rounded-t-lg" loading="lazy"
+                            src="{{ asset('storage/' . $m->gambar) }}" alt="" />
                         <div class="flex-grow p-5">
                             <a href="#">
                                 <h5
@@ -104,7 +109,7 @@
                                     {{ $m->Menu }}</h5>
                             </a>
                             <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                                {{ $m->kategori }}</p>
+                                {{ $m->kategori->name }}</p>
 
                             <div class="flex justify-between">
                                 <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Rp

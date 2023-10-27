@@ -17,8 +17,10 @@ class AdminController extends Controller
 
    public function show()
    {
-      $data = Menu::get();
+      $data = Menu::with('kategori')->get();
       $Kategori = Kategori::get();
+
+      // dd($data);
       return view('pages.admin.table', ['Menu' => $data, 'Kategori' => $Kategori]);
    }
 
@@ -26,7 +28,7 @@ class AdminController extends Controller
    {
       $request->validate(
          [
-            'gambar' => 'required|mimes:jpeg,png,jpg|max:2048',
+            'gambar' => 'required|mimes:jpeg,png,jpg|max:5000',
          ],
          [
             'gambar.required' => 'File Tidak Boleh Kosong', 
@@ -43,7 +45,7 @@ class AdminController extends Controller
       Menu::create([
          'Menu' => $request->Menu,
          'gambar' => $path,
-         'kategori' => $request->kategori,
+         'kategori_id' => $request->kategori,
          'harga' => $request->harga,
 
       ]);
@@ -58,33 +60,34 @@ class AdminController extends Controller
 
       $request->validate(
          [
-            'gambar' => 'required|mimes:jpeg,png,jpg,pdf|max:2048',
+            'gambar' => 'mimes:jpeg,png,jpg,pdf|max:2048',
 
          ],
          [
-            'gambar.required' => 'File Tidak Boleh Kosong',
             'gambar.max' => 'File Tidak Boleh Lebih Dari 2MB',
             'gambar.mimes' => 'Format File Harus JPG,PNG,PDF',
          ]
       );
-
       if ($request->hasFile('gambar')) {
          $path = $request->file('gambar')->store('uploads/menu');
+ 
+         $pathFile = $data->gambar;
+ 
+         if ($pathFile != null || $pathFile != '') {
+             Storage::delete($pathFile);
+         }
       } else {
-         $path = '';
+         $path = $data->gambar;
       }
-
-      $pathFile = $data->gambar;
-
-      if ($pathFile != null || $pathFile != '') {
-            Storage::delete($pathFile);
-         
+      if($request->kategori != ''){
+         $data->Menu = $request->Menu;
+         $data->kategori_id = $request->kategori;
+         $data->harga = $request->harga;
+         $data->gambar = $path;
+         $data->save();
       }
-      $data->Menu = $request->Menu;
-      $data->kategori = $request->kategori;
-      $data->harga = $request->harga;
-      $data->gambar = $path;
-      $data->save();
+ 
+    
       return redirect()->route('table');
    }
 
@@ -104,7 +107,7 @@ class AdminController extends Controller
 
    public function addKategori(Request $request){
       $kate = new Kategori();
-      $kate->kategori = $request->kategori;
+      $kate->name = $request->kategori;
       $kate->save();
 
       return redirect('table');
@@ -113,7 +116,7 @@ class AdminController extends Controller
    public function editKategori(Request $request){
       $id = $request->idKategori;
       $kate = Kategori::find($id);
-      $kate->kategori = $request->kategori;
+      $kate->name = $request->kategori;
       $kate->save();
 
       return redirect('table');

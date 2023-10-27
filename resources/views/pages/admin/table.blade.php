@@ -183,7 +183,7 @@
                                         Rp. {{ $m->harga }}
                                     </td>
                                     <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                        {{ $m->kategori }}
+                                        {{ $m->kategori->name }}
                                     </td>
 
                                     <td class="p-4 space-x-2 whitespace-nowrap text-center">
@@ -218,8 +218,8 @@
                                 </tr>
                                 <x-admin.content.modaldelete id='{{ $m->id }}' />
                                 <x-admin.content.modalupdate id='{{ $m->id }}' Menu='{{ $m->Menu }}'
-                                    harga='{{ $m->harga }}' kategori='{{ $m->kategori }}'
-                                    gambar='{{ $m->gambar }}' />
+                                    harga='{{ $m->harga }}' gambar='{{ $m->gambar }}'
+                                    kategoriSelected='{{ $m->kategori->id }}' :kategori='$Kategori' />
                             @endforeach
 
                         </tbody>
@@ -277,7 +277,7 @@
     </div>
 
 
-    <x-admin.content.modalcreate />
+    <x-admin.content.modalcreate :kategori='$Kategori' />
     <x-admin.content.modalKategori :Kategori='$Kategori' />
 
 @endsection

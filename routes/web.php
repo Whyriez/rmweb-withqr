@@ -30,6 +30,9 @@ Route::get('/kategori/delete/{id}', [AdminController::class, 'deleteKategori'])-
 
 //user
 Route::get('/', [UserController::class, 'index'])->name('home');
+Route::get('/cart', [UserController::class, 'viewCart'])->name('cart');
 Route::get('/cart/store/{id}', [UserController::class, 'cartStore'])->name('cart/store/{id}');
+Route::get('/cart/delete/{id}', [UserController::class, 'cartDelete'])->name('cart/delete/{id}');
+Route::put('/cart/update', [UserController::class, 'cartUpdate'])->name('cart/update');
 
-Route::get('/kategori/{name}', [UserController::class, 'showKategori'])->name('kategori/{name}');
+Route::get('/kategori/{id}', [UserController::class, 'showKategori'])->name('kategori/{id}');

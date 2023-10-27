@@ -4,7 +4,7 @@
             <span class="self-center text-2xl whitespace-nowrap dark:text-white font-inter font-black">WONGSOLO</span>
         </a>
         <div class="flex justify-end gap-4 md:order-last">
-            <a a href="#" class="">
+            <a a href="{{ url('cart') }}" class="">
                 <div
                     class="max-w-sm p-2 h-8 hover:bg-stone-300 bg-stone-200 rounded-lg shadow-inner flex justify-center items-center dark:bg-slate-800 dark:hover:bg-blue-900">
                     <img src="{{ asset('assets/img/bag-frame.svg') }}" alt="" class="dark:hidden" /><img

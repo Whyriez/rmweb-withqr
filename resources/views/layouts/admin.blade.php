@@ -18,6 +18,8 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     @vite('resources/css/app.css')
+    {{-- <link rel="stylesheet" href="{{ asset('build/assets/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('build/assets/app.js') }}"> --}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>

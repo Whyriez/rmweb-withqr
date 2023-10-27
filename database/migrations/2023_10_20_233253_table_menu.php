@@ -15,9 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('Menu');
             $table->string('gambar');
-            $table->string('kategori');
+            $table->unsignedBigInteger('kategori_id'); 
             $table->integer('harga');
             $table->timestamps();
+
+            $table->foreign('kategori_id')->references('id')->on('tb_kategori');
         });
     }
 

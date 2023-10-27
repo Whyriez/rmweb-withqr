@@ -14,10 +14,14 @@ class UserController extends Controller
         return view('pages.user.index')->with(['menu' => $data, 'kategori' => $kate]);
     }
 
-    public function showKategori($name){
-        $data = Menu::where('kategori', $name)->get();
+    public function showKategori($id){
+        $data = Menu::where('kategori_id', $id)->get();
         $kate = Kategori::all();
         return view('pages.user.index')->with(['menu' => $data, 'kategori' => $kate]);
+    }
+
+    public function viewCart(){
+        return view('pages.user.cart');
     }
 
     public function cartStore($id){
@@ -27,6 +31,7 @@ class UserController extends Controller
             $cart[$id]['jumlah']++;
         }else{
             $cart[$id] = [
+                'id' => $id,
                 'nama' => $menu->Menu,
                 'jumlah' => 1,
                 'harga' => $menu->harga,
@@ -35,6 +40,26 @@ class UserController extends Controller
         }
 
         session()->put('cart', $cart);
+        return redirect()->back();
+    }
+
+    public function cartUpdate(Request $request){
+        $id = $request->id;
+
+        $cart = $request->session()->get('cart');
+
+        if(isset($cart[$id])) {
+            $cart[$id]['jumlah'] = $request->input('jumlah');
+            $request->session()->put('cart', $cart);
+        }
+    
+        return redirect()->back();
+    }
+
+    public function cartDelete(Request $request, $id){
+
+        $request->session()->forget('cart.' . $id);
+
         return redirect()->back();
     }
 }
