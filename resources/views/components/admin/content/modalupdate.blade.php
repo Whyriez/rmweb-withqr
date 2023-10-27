@@ -25,7 +25,7 @@
             </div>
             <!-- Modal body -->
             <div class="p-6 space-y-6">
-                <form action="{{ url('/admin/edit/' . $id) }}" method="post">
+                <form action="{{ url('/table/edit/' . $id) }}" method="post">
 
                     @csrf
                     @method('put')

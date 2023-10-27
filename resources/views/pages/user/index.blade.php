@@ -68,18 +68,25 @@
                 Selamat Datang Di <br> RM. Wong Solo</div>
             <div class="flex justify-center pt-8" id="menu">
                 <div class="inline-flex rounded-md shadow-sm">
-                    <a href="#" aria-current="page"
-                        class="px-4 py-2 text-sm font-medium text-blue-700 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
+                    <a href="{{ url('/') }}" aria-current="page"
+                        class="px-4 py-2 text-sm font-medium  @if (request()->is('/')) text-blue-700 bg-gray-200 dark:bg-gray-700 @endif  hover:text-blue-700 focus:ring-blue-700 focus:text-blue-700  border border-gray-200 rounded-l-lg hover:bg-gray-200 focus:z-10 focus:ring-2   dark:border-gray-600 dark:text-white dark:hover:text-white dark:focus:ring-blue-500 dark:hover:bg-gray-600  dark:focus:text-white">
                         Semua
                     </a>
-                    <a href="#"
+                    @foreach ($kategori as $k)
+                        <a href="{{ url('kategori/' . $k->kategori) }}"
+                            class="px-4 py-2 text-sm font-medium  @if (request()->is('kategori/' . $k->kategori)) bg-gray-200  text-blue-700 dark:bg-gray-700 @endif border border-gray-200  @if ($loop->last) rounded-r-md @endif hover:bg-gray-200 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700   dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
+                            {{ $k->kategori }}
+                        </a>
+                    @endforeach
+
+                    {{-- <a href="#"
                         class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
                         Makanan
                     </a>
                     <a href="#"
                         class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
                         Minuman
-                    </a>
+                    </a> --}}
                 </div>
             </div>
             <!-- wrapper menu -->

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kategori;
 use App\Models\Menu;
 use Illuminate\Http\Request;
 
@@ -9,7 +10,14 @@ class UserController extends Controller
 {
     public function index(){
         $data = Menu::all();
-        return view('pages.user.index')->with(['menu' => $data]);
+        $kate = Kategori::all();
+        return view('pages.user.index')->with(['menu' => $data, 'kategori' => $kate]);
+    }
+
+    public function showKategori($name){
+        $data = Menu::where('kategori', $name)->get();
+        $kate = Kategori::all();
+        return view('pages.user.index')->with(['menu' => $data, 'kategori' => $kate]);
     }
 
     public function cartStore($id){
