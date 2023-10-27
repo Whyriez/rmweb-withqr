@@ -1,4 +1,3 @@
-@extends('layouts.admin')
 @section('title', 'Data Menu')
 @section('menu', 'bg-gray-100 dark:bg-gray-700')
 
@@ -280,8 +279,5 @@
 
     <x-admin.content.modalcreate />
     <x-admin.content.modalKategori :Kategori='$Kategori' />
-
-
-
 
 @endsection

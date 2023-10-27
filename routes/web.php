@@ -16,7 +16,6 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-
 // Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::get('/table', [AdminController::class, 'show'])->name('table');

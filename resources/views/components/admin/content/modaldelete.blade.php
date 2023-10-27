@@ -9,9 +9,6 @@
             <!-- Modal header -->
             <div class="flex justify-end p-2">
                 @csrf
-
-
-
                 <button type="button"
                     class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-700 dark:hover:text-white"
                     data-modal-toggle="delete-user-modal-{{ $id }}">

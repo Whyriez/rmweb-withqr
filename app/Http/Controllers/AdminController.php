@@ -28,19 +28,18 @@ class AdminController extends Controller
       return view('pages.admin.table');
    }
 
-
    public function store(Request $request)
    {
-      // $request->validate(
-      //    [
-      //       'gambar' => 'required|mimes:jpeg,png,jpg,pdf|max:2048',
-      //    ],
-      //    [
-      //       'gambar.required' => 'File Tidak Boleh Kosong',
-      //       'gambar.max' => 'File Tidak Boleh Lebih Dari 2MB',
-      //       'gambar.mimes' => 'Format File Harus JPG,PNG,PDF',
-      //    ]
-      // );
+      $request->validate(
+         [
+            'gambar' => 'required|mimes:jpeg,png,jpg|max:2048',
+         ],
+         [
+            'gambar.required' => 'File Tidak Boleh Kosong', 
+            'gambar.max' => 'File Tidak Boleh Lebih Dari 2MB',
+            'gambar.mimes' => 'Format File Harus JPG,PNG',
+         ]
+      );
       if ($request->hasFile('gambar')) {
          $path = $request->file('gambar')->store('uploads/menu');
       } else {
@@ -63,32 +62,43 @@ class AdminController extends Controller
    {
       $data = Menu::find($id);
 
+      $request->validate(
+         [
+            'gambar' => 'required|mimes:jpeg,png,jpg,pdf|max:2048',
 
+         ],
+         [
+            'gambar.required' => 'File Tidak Boleh Kosong',
+            'gambar.max' => 'File Tidak Boleh Lebih Dari 2MB',
+            'gambar.mimes' => 'Format File Harus JPG,PNG,PDF',
+         ]
+      );
+
+      if ($request->hasFile('gambar')) {
+         $path = $request->file('gambar')->store('uploads/menu');
+      } else {
+         $path = '';
+      }
+
+      $pathFile = $data->gambar;
+
+      if ($pathFile != null || $pathFile != '') {
+            Storage::delete($pathFile);
+         
+      }
       $data->Menu = $request->Menu;
       $data->kategori = $request->kategori;
       $data->harga = $request->harga;
+      $data->gambar = $path;
       $data->save();
       return redirect()->route('table');
    }
-
-   // public function update(Request $request)
-   // {
-   //    $id = $request->id;
-   //    $data = Menu::find($id);
-
-
-   //    $data->Menu = $request->Menu;
-   //    $data->kategori = $request->kategori;
-   //    $data->harga = $request->harga;
-   //    $data->save();
-   //    return redirect()->route('table');
-   // }
-
 
    public function destroy($id)
    {
       $data = Menu::find($id);
       $pathFile = $data->gambar;
+
       if ($pathFile != null || $pathFile != '') {      
            Storage::delete($pathFile);
        }

@@ -1,4 +1,4 @@
-@props(['id', 'Menu', 'harga', 'kategori'])
+@props(['id', 'Menu', 'harga', 'kategori', 'gambar'])
 
 <!-- Edit User Modal -->
 <div class="fixed left-0 right-0 z-50 items-center justify-center hidden overflow-x-hidden overflow-y-auto top-4 md:inset-0 h-modal sm:h-full"
@@ -25,8 +25,7 @@
             </div>
             <!-- Modal body -->
             <div class="p-6 space-y-6">
-                <form action="{{ url('/table/edit/' . $id) }}" method="post">
-
+                <form action="{{url('/table/edit/'.$id)}}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <input type="hidden" value="{{ $id }}" name="id">
@@ -38,12 +37,13 @@
                                 class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                 placeholder="Bonnie" required>
                         </div>
+                        
                         <div class="col-span-6 sm:col-span-3">
-                            <label for="last-name"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kategori </label>
-                            <input type="text" val name="kategori" value="{{ $kategori }}" id="last-name"
-                                class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                placeholder="Green" required>
+                            <label for="category-create" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kategori</label>
+                            <select id="category-create" name="kategori" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                                <option value="{{$kategori}}">Makanan</option>
+                                <option value="{{$kategori}}">Minuman</option>
+                            </select>
                         </div>
                         <div class="col-span-6 sm:col-span-3">
                             <label for="email"
@@ -53,11 +53,14 @@
                                 placeholder="example@company.com" required>
                         </div>
                         <div class="col-span-4 sm:col-span-3">
-                            <label for="position"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gambar </label>
-                            <input type="file" name="gambar" value="React Developer"
-                                class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                placeholder="e.g. React developer">
+                            <label for="position" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gambar </label>
+                            <input type="file" name="gambar"  class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 @error('gambar') is-invalid @enderror" value="{{$gambar}}" placeholder=" Upload File" required>
+                            <img src="{{asset('storage/' .$gambar )}}" class="object-cover h-36 w-36 mt-6">
+                            @error('gambar')
+                            <div class="block mb-2 text-sm font-medium text-gray-900 dark:text-white invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
                         <div class="col-span-6 sm:col-span-3">
                         </div>
