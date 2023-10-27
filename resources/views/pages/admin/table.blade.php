@@ -1,3 +1,4 @@
+@extends('layouts.admin')
 @section('title', 'Data Menu')
 @section('menu', 'bg-gray-100 dark:bg-gray-700')
 
@@ -135,9 +136,7 @@
                         <thead class="bg-gray-100 dark:bg-gray-700">
                             <tr>
                                 <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase">
-
                                     No
-
                                 </th>
                                 <th scope=" col"
                                     class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
@@ -172,7 +171,7 @@
                                         </div>
                                     </td>
                                     <td class="flex items-center p-4 mr-12 space-x-6 whitespace-nowrap">
-                                        <img class="w-24 h-24 " src="{{ asset('storage/' . $m->gambar) }}"
+                                        <img class="w-24 h-24 object-cover" src="{{ asset('storage/' . $m->gambar) }}"
                                             alt="avatar">
                                         <div class="text-sm font-normal text-gray-500 dark:text-gray-400">
                                     </td>
@@ -219,7 +218,8 @@
                                 </tr>
                                 <x-admin.content.modaldelete id='{{ $m->id }}' />
                                 <x-admin.content.modalupdate id='{{ $m->id }}' Menu='{{ $m->Menu }}'
-                                    harga='{{ $m->harga }}' kategori='{{ $m->kategori }}' />
+                                    harga='{{ $m->harga }}' kategori='{{ $m->kategori }}'
+                                    gambar='{{ $m->gambar }}' />
                             @endforeach
 
                         </tbody>

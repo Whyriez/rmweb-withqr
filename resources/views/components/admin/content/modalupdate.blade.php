@@ -25,7 +25,7 @@
             </div>
             <!-- Modal body -->
             <div class="p-6 space-y-6">
-                <form action="{{url('/table/edit/'.$id)}}" method="post" enctype="multipart/form-data">
+                <form action="{{ url('/table/edit/' . $id) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <input type="hidden" value="{{ $id }}" name="id">
@@ -37,12 +37,14 @@
                                 class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                 placeholder="Bonnie" required>
                         </div>
-                        
+
                         <div class="col-span-6 sm:col-span-3">
-                            <label for="category-create" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kategori</label>
-                            <select id="category-create" name="kategori" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-                                <option value="{{$kategori}}">Makanan</option>
-                                <option value="{{$kategori}}">Minuman</option>
+                            <label for="category-create"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kategori</label>
+                            <select id="category-create" name="kategori"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+                                <option value="{{ $kategori }}">Makanan</option>
+                                <option value="{{ $kategori }}">Minuman</option>
                             </select>
                         </div>
                         <div class="col-span-6 sm:col-span-3">
@@ -53,13 +55,16 @@
                                 placeholder="example@company.com" required>
                         </div>
                         <div class="col-span-4 sm:col-span-3">
-                            <label for="position" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gambar </label>
-                            <input type="file" name="gambar"  class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 @error('gambar') is-invalid @enderror" value="{{$gambar}}" placeholder=" Upload File" required>
-                            <img src="{{asset('storage/' .$gambar )}}" class="object-cover h-36 w-36 mt-6">
+                            <label for="position"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gambar </label>
+                            <input type="file" name="gambar"
+                                class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 @error('gambar') is-invalid @enderror"
+                                value="{{ $gambar }}" placeholder=" Upload File" required>
+                            <img src="{{ asset('storage/' . $gambar) }}" class="object-cover h-36 w-36 mt-6">
                             @error('gambar')
-                            <div class="block mb-2 text-sm font-medium text-gray-900 dark:text-white invalid-feedback">
-                                {{ $message }}
-                            </div>
+                                <div class="block mb-2 text-sm font-medium text-gray-900 dark:text-white invalid-feedback">
+                                    {{ $message }}
+                                </div>
                             @enderror
                         </div>
                         <div class="col-span-6 sm:col-span-3">

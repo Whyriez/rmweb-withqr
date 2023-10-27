@@ -21,7 +21,6 @@ Route::get('/admin', [AdminController::class, 'index'])->name('admin');
 Route::get('/table', [AdminController::class, 'show'])->name('table');
 Route::post('/table', [AdminController::class, 'store'])->name('table');
 Route::put('/table/edit/{id}', [AdminController::class, 'edit'])->name('/admin/edit/{id}');
-// Route::get('/table/update', [AdminController::class, 'update'])->name('/admin/update');
 Route::get('/table/delete/{id}', [AdminController::class, 'destroy'])->name('/admin/delete/{id}');
 
 Route::post('/kategori/add', [AdminController::class, 'addKategori'])->name('kategori/add');

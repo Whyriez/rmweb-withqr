@@ -22,12 +22,6 @@ class AdminController extends Controller
       return view('pages.admin.table', ['Menu' => $data, 'Kategori' => $Kategori]);
    }
 
-   public function create()
-   {
-      $data = Menu::all();
-      return view('pages.admin.table');
-   }
-
    public function store(Request $request)
    {
       $request->validate(
