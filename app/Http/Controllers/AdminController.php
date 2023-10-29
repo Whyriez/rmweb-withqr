@@ -14,6 +14,7 @@ class AdminController extends Controller
 
     return view('pages.admin.index');
    }
+   
 
    public function show()
    {
@@ -125,4 +126,6 @@ class AdminController extends Controller
       $data->delete();
       return redirect()->route('table')->with('sucess', 'data berhasil dihapus');
    }
+
+   
 }

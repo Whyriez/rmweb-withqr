@@ -218,7 +218,7 @@
                                 </tr>
                                 <x-admin.content.modaldelete id='{{ $m->id }}' />
                                 <x-admin.content.modalupdate id='{{ $m->id }}' Menu='{{ $m->Menu }}'
-                                    harga='{{ $m->harga }}' kategori='{{ $m->kategori }}'
+                                    harga='{{ $m->harga }}' kategori='{{ $m->kategori }}' :loopkategori='$Kategori'
                                     gambar='{{ $m->gambar }}' />
                             @endforeach
 
@@ -277,7 +277,7 @@
     </div>
 
 
-    <x-admin.content.modalcreate />
+    <x-admin.content.modalcreate :Kategori='$Kategori'  />
     <x-admin.content.modalKategori :Kategori='$Kategori' />
 
 @endsection

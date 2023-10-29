@@ -1,3 +1,5 @@
+@props(['Kategori'])
+
 <!-- Edit User Modal -->
 <div class="fixed left-0 right-0 z-50 items-center justify-center hidden overflow-x-hidden overflow-y-auto top-4 md:inset-0 h-modal sm:h-full"
     id="add-user-modal">
@@ -30,16 +32,18 @@
                         <div class="col-span-6 sm:col-span-3">
                             <label for="first-name"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama</label>
-                            <input type="text" name="Menu" value="Bonnie" id="first-name"
+                            <input type="text" name="Menu" id="first-name"
                                 class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                 placeholder="Bonnie" required>
                         </div>
                        
                         <div class="col-span-6 sm:col-span-3">
                             <label for="category-create" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kategori</label>
-                            <select id="category-create" name="kategori" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-                                <option value="Makanan">Makanan</option>
-                                <option value="Minuman">Minuman</option>
+                            <select id="category-create" name="kategori" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">                   
+                                @foreach ($Kategori as $k )
+                                    
+                                <option value="{{ $k->kategori}}">{{ $k->kategori}}</option>
+                                @endforeach 
                             </select>
                         </div>
                         <div class="col-span-6 sm:col-span-3">
@@ -51,12 +55,12 @@
                         </div>
                         <div class="col-span-4 sm:col-span-3">
                             <label for="position" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gambar </label>
-                            <input type="file" name="gambar" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 @error('gambar') is-invalid @enderror"" placeholder=" Upload File" required>
+                            <input type="file" name="gambar" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 @error('gambar') is-invalid @enderror" placeholder=" Upload File" required>
                             @error('gambar')
                             <div class="block mb-2 text-sm font-medium text-gray-900 dark:text-white invalid-feedback">
                                 {{ $message }}
                             </div>
-                            @enderror
+                            @enderror   
                         </div>
                         <div class="col-span-6 sm:col-span-3">
                         </div>
