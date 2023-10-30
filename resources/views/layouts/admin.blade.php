@@ -22,11 +22,13 @@
     <link rel="stylesheet" href="{{ asset('build/assets/app.js') }}"> --}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
 </head>
 
 <body class="bg-white dark:bg-gray-900">
 
-@include('components.admin.navbar')
+    @include('components.admin.navbar')
     <div class="flex pt-16 overflow-hidden bg-gray-50 dark:bg-gray-900">
         @include('components.admin.sidebar')
         <div id="main-content" class="relative w-full h-full overflow-y-auto bg-gray-50 lg:ml-64 dark:bg-gray-900">

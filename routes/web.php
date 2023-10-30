@@ -31,17 +31,28 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('/table', [AdminController::class, 'store'])->name('table');
         Route::put('/table/edit/{id}', [AdminController::class, 'edit'])->name('/admin/edit/{id}');
         Route::get('/table/delete/{id}', [AdminController::class, 'destroy'])->name('/admin/delete/{id}');
+        Route::get('/table/delete/{id}', [AdminController::class, 'destroy'])->name('/admin/delete/{id}');
         Route::post('/kategori/add', [AdminController::class, 'addKategori'])->name('kategori/add');
         Route::put('/kategori/edit', [AdminController::class, 'editKategori'])->name('kategori/edit');
         Route::get('/kategori/delete/{id}', [AdminController::class, 'deleteKategori'])->name('kategori/delete/{id}');
+        Route::get('/laporan', [AdminController::class, 'viewLaporan'])->name('laporan');
+        Route::get('/laporan/harian', [AdminController::class, 'laporanHarian'])->name('laporan/harian');
+        Route::get('/laporan/bulanan', [AdminController::class, 'laporanBulanan'])->name('laporan/bulanan');
+
+        Route::get('qrcode', [AdminController::class, 'generateQrCode'])->name('qrcode');
+        Route::post('addQrCode/add', [AdminController::class, 'addQrCode'])->name('addQrCode/add');
+        Route::get('meja/delete/{id}', [AdminController::class, 'deleteMeja'])->name('meja/delete/{id');
+        Route::get('download/qrcode', [AdminController::class, 'downloadQr'])->name('download/qrcode');
     });
 });
 
 //user
 Route::get('/', [UserController::class, 'index'])->name('home');
+Route::get('/id/{id}', [UserController::class, 'index'])->name('homeid');
 Route::get('/cart', [UserController::class, 'viewCart'])->name('cart');
 Route::get('/cart/store/{id}', [UserController::class, 'cartStore'])->name('cart/store/{id}');
 Route::get('/cart/delete/{id}', [UserController::class, 'cartDelete'])->name('cart/delete/{id}');
 Route::put('/cart/update', [UserController::class, 'cartUpdate'])->name('cart/update');
+Route::get('/cart/checkout', [UserController::class, 'cartCheckout'])->name('cart/checkout');
 
 Route::get('/kategori/{id}', [UserController::class, 'showKategori'])->name('kategori/{id}');

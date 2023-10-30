@@ -68,6 +68,14 @@
                 </button>
             </div>
 
+            @if (session()->has('idMeja'))
+                {{-- <form action="{{ route('hapusSession') }}" method="POST">
+                    @csrf --}}
+                <input type="text" class="text-black" value="{{ session('idMeja') }}">
+                <button type="submit" class="text-white">Hapus</button>
+                {{-- </form> --}}
+            @endif
+
             <div
                 class="text-center text-black text-[22px] md:text-[34px] lg:text-[60px] font-black font-inter pt-8 dark:text-white">
                 Selamat Datang Di <br> RM. Wong Solo</div>

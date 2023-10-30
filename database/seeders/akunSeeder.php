@@ -14,11 +14,10 @@ class akunSeeder extends Seeder
      */
     public function run(): void
     {
-        $data = User::all();
-        $data -> insert([
+        DB::table('users')->insert([
             'name' => 'admin',
-            'email' => 'admin@mail.com',
-            'password' => bcrypt('password'),
+            'email' => 'admin@gmail.com',
+            'password' => bcrypt('admin'),
         ]);
     }
 }

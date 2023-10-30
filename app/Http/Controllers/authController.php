@@ -29,13 +29,18 @@ class authController extends Controller
             ]
         );
 
-        $infologin = [
-            'email' => $request->email,
-            'password' => $request->password
-        ];
+        // $infologin = [
+        //     'email' => $request->email,
+        //     'password' => $request->password
+        // ];
+        $email = $request->email;
+        $password = $request->password;
 
-        if(Auth::attempt($infologin)){
-            return redirect('admin');
+
+        if(Auth::attempt(['email' => $email, 'password' => $password])){
+            // $request->session()->regenerate();
+            $user = Auth::user();
+            return redirect('admin')->with(['user' => $user]);
         }else{
             return redirect('login')->withErrors('Email dan Password yang anda masukkan tidak valid');
         }

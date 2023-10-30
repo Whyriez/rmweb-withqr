@@ -15,7 +15,7 @@
                             @foreach (session('cart') as $session => $value)
                                 <div class="flex items-center justify-between mb-4">
                                     <div class="flex items-center">
-                                        <input type="hidden" name="id" value="{{ $value['id'] }}">
+                                        <input type="hidden" name="id[]" value="{{ $value['id'] }}">
                                         <img src="{{ asset('storage/' . $value['gambar']) }}" alt="Product Image"
                                             class="w-16 h-16 object-cover rounded">
                                         <div class="ml-4">
@@ -26,8 +26,8 @@
                                     </div>
                                     <div class="flex items-center">
                                         <button type="button" data-modal-toggle="delete-cart-{{ $value['id'] }}"
-                                            class="bg-red-900 text-black dark:text-white dark:bg-red-500 p-1 rounded-md font-bold">Remove</button>
-                                        <input type="number" name="jumlah"
+                                            class="bg-red-900 text-black dark:text-white dark:bg-red-500 p-1 rounded-md font-bold">Hapus</button>
+                                        <input type="number" name="jumlah[]"
                                             class="w-14 border border-gray-300 rounded text-center ml-4"
                                             value="{{ $value['jumlah'] }}">
                                     </div>
@@ -111,7 +111,8 @@
                             </p>
                             <div>
                                 <button class="bg-yellow-500 text-white px-4 py-2 rounded">Update</button>
-                                <button class="bg-blue-500 text-white px-4 py-2 rounded">Checkout</button>
+                                <a href="{{ route('cart/checkout') }}" type="button"
+                                    class="bg-blue-500 text-white px-4 py-2 rounded">Checkout</a>
                             </div>
                         </div>
                     </form>
