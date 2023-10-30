@@ -18,23 +18,18 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     @vite('resources/css/app.css')
-    {{-- <link rel="stylesheet" href="{{ asset('build/assets/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('build/assets/app.js') }}"> --}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
 
 <body class="bg-white dark:bg-gray-900">
 
-@include('components.admin.navbar')
     <div class="flex pt-16 overflow-hidden bg-gray-50 dark:bg-gray-900">
-        @include('components.admin.sidebar')
         <div id="main-content" class="relative w-full h-full overflow-y-auto bg-gray-50 lg:ml-64 dark:bg-gray-900">
             <main>
                 <div class="px-4 pt-6">
                     @yield('content')
                     <div class="flex justify-center">
-                        @include('components.admin.footer')
                     </div>
                 </div>
             </main>
