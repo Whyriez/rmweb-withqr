@@ -15,8 +15,15 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 class AdminController extends Controller
 {
    public function index(){
+    $status = "proses";
+    // $meja = Meja::all();
 
-    return view('pages.admin.index');
+
+    $pesanan = Transaksi::whereHas('detailTransaksi', function($query) use ($status) {
+         $query->where('status_pesanan', $status);
+    })->get();
+ 
+    return view('pages.admin.index')->with(['pesanan' => $pesanan]);
    }
 
    public function generateQrCode(){
@@ -41,7 +48,7 @@ class AdminController extends Controller
 
  //    $content = json_encode($data);
 
-    $result = QrCode::format('png')->size(300)->margin(1)->generate('https://f931-2001-448a-706e-20eb-f4db-f6c8-b0c9-24d4.ngrok-free.app/id/' . $hashedQrName);
+    $result = QrCode::format('png')->size(300)->margin(1)->generate('http://127.0.0.1:8000/id/' . $hashedQrName);
     $customName = $qrName . '-' . str_pad(rand(1, 999), 3, '0', STR_PAD_LEFT);
     $path = 'uploads/img/' . $customName . '.png';
     Storage::put($path, $result);
@@ -322,6 +329,15 @@ class AdminController extends Controller
    })->get();
 
    return view('pages.admin.laporanBulanan')->with(['pendapatanHarian' => $pendapatanHarian, 'bulan' => $bulanHuruf, 'tahun' => $tahun]);
+}
+
+public function updatePesanan($id){
+    $data = Transaksi::find($id);
+
+    $data->status_pesanan = 'selesai';
+    $data->save();
+
+    return redirect()->back();
 }
 
    

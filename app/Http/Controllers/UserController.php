@@ -65,18 +65,22 @@ class UserController extends Controller
     }
 
     public function cartUpdate(Request $request){
+        $cart = $request->session()->get('cart');
+        
         $ids = $request->input('id');
         $quantities = $request->input('jumlah');
 
-        $cart = $request->session()->get('cart');
-
-        foreach($ids as $index => $id) {
-            if(isset($cart[$id])) {
-                $cart[$id]['jumlah'] = $quantities[$index];
+        if($cart){
+            foreach($ids as $index => $id) {
+                if(isset($cart[$id])) {
+                    $cart[$id]['jumlah'] = $quantities[$index];
+                }
             }
+    
+            $request->session()->put('cart', $cart);
         }
+       
 
-        $request->session()->put('cart', $cart);
 
         // if(isset($cart[$id])) {
         //     $cart[$id]['jumlah'] = $request->input('jumlah');
@@ -95,29 +99,45 @@ class UserController extends Controller
 
     public function cartCheckout(Request $request){
         $cart = $request->session()->get('cart');
-        $noPesanan = 'INV-' . date('Ymd') . '-' . str_pad(rand(1, 999), 3, '0', STR_PAD_LEFT);
-        $tanggalOrder = date('Y-m-d');
-        $total = 0;
+        $idMeja = $request->session()->get('idMeja');
 
-        Transaksi::create([
-            'no_pesanan' => $noPesanan,
-            'tgl_order' => $tanggalOrder,
-            'total_bayar' => $total,
-        ]);
-        
-        foreach ($cart as $item) {
-            $total += $item['jumlah'] * $item['harga'];
-            DetailTransaksi::create([
-                'no_psn' => $noPesanan,
-                'id_menu' => $item['id'],
-                'qty' => $item['jumlah'],
-                'meja' => 1,
-            ]);
+        if($idMeja == null || $idMeja == ''){
+            return redirect()->back()->withErrors([
+                'NoMeja' => 'No Meja Tidak Ditemukan, Silahkan Scan Ulang Barcode!!',
+              ]);
         }
-       
-        $request->session()->forget('cart');
-        $request->session()->forget('idMeja');
+
+        if($cart){
+            $noPesanan = 'INV-' . date('Ymd') . '-' . str_pad(rand(1, 999), 3, '0', STR_PAD_LEFT);
+            $tanggalOrder = date('Y-m-d');
+            $total = 0;
+
+            foreach ($cart as $item) {
+                $total += $item['jumlah'] * $item['harga'];
+            }
     
+            Transaksi::create([
+                'no_pesanan' => $noPesanan,
+                'tgl_order' => $tanggalOrder,
+                'total_bayar' => $total,
+                'status_pesanan' => 'proses',
+            ]);
+            
+            foreach ($cart as $item) {
+                DetailTransaksi::create([
+                    'no_psn' => $noPesanan,
+                    'id_menu' => $item['id'],
+                    'qty' => $item['jumlah'],
+                    'meja' => $idMeja,
+                ]);
+            }
+        
+            $request->session()->forget('cart');
+            $request->session()->forget('idMeja');
+        }
+      
+        // $request->session()->flash('msg', "Berhasil Update Profile");
         return redirect()->back();
+      
     }
 }

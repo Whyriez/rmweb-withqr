@@ -24,6 +24,22 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
+
+    <style type="text/css">
+        #printable {
+            display: none;
+        }
+
+        @media print {
+            #non-printable {
+                display: none;
+            }
+
+            #printable {
+                display: block;
+            }
+        }
+    </style>
 </head>
 
 <body class="bg-white dark:bg-gray-900">
@@ -73,6 +89,9 @@
         document.getElementById('sidebarBackdrop').addEventListener('click', function() {
             navbarDropdown.classList.toggle('hidden');
             sidebarBackdrop.classList.toggle('hidden');
+        });
+        document.getElementById('print-window').addEventListener('click', function() {
+            window.print();
         });
     </script>
 

@@ -24,6 +24,7 @@ return new class extends Migration
             ->on('table_transaksi');
 
             
+            
         });
     }
 

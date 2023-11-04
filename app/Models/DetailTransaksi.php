@@ -20,5 +20,10 @@ class DetailTransaksi extends Model
     {
         return $this->belongsTo(Menu::class, 'id_menu');
     }
+
+    public function meja()
+    {
+        return $this->belongsTo(Meja::class, 'no_meja');
+    }
     
 }

@@ -10,4 +10,9 @@ class Meja extends Model
     use HasFactory;
     protected $table= 'table_qrmeja';
     protected $fillable = ['no_meja', 'img_qr'];
+
+
+    public function detailMeja() {
+        return $this->hasOne(DetailTransaksi::class, 'meja');
+    }
 }

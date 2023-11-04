@@ -5,7 +5,7 @@
 @section('content')
     <div class="max-w-xl mx-auto bg-white dark:bg-gray-900 border border-gray-200 rounded-lg shadow-lg p-6 mt-8">
         <div class="flex justify-between mb-4">
-            <h2 class="text-xl font-bold text-gray-900 dark:text-white">Laporan Harian</h2>
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white ">Laporan Harian</h2>
             <span class="text-gray-700 dark:text-gray-400">Date: {{ $bulan }} {{ $tanggal }},
                 {{ $tahun }}</span>
         </div>
@@ -53,7 +53,7 @@
 
 
         <div class="text-right flex justify-center">
-            <button
+            <button id="print-window"
                 class="px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Print</button>
         </div>
     </div>

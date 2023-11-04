@@ -41,8 +41,11 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::get('qrcode', [AdminController::class, 'generateQrCode'])->name('qrcode');
         Route::post('addQrCode/add', [AdminController::class, 'addQrCode'])->name('addQrCode/add');
-        Route::get('meja/delete/{id}', [AdminController::class, 'deleteMeja'])->name('meja/delete/{id');
+        Route::get('meja/delete/{id}', [AdminController::class, 'deleteMeja'])->name('meja/delete/{id}');
         Route::get('download/qrcode', [AdminController::class, 'downloadQr'])->name('download/qrcode');
+
+
+        Route::get('pesanan/update/{id}', [AdminController::class, 'updatePesanan'])->name('pesanan/update/{id}');
     });
 });
 

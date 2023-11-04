@@ -7,6 +7,9 @@
             <div class="container mx-auto mt-8">
                 <div class="bg-white dark:bg-gray-900 p-8 rounded shadow">
                     <h2 class="text-2xl font-bold mb-4 text-black dark:text-white">Shopping Cart</h2>
+                    @error('NoMeja')
+                        <h2 class="text-xl font-bold mb-4 text-red-900 dark:text-red-500"> {{ $errors->first('NoMeja') }}</h2>
+                    @enderror
                     <form action="{{ url('cart/update') }}" method="POST">
                         @csrf
                         @method('put')
