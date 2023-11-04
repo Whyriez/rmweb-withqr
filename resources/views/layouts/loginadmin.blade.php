@@ -17,7 +17,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-    @vite('resources/css/app.css')
+    <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </head>
@@ -28,6 +28,8 @@
             @yield('content')
         </div>
     </main>
+
+    <script src="{{ asset('assets/css/app.js') }}"></script>
     <script src="{{ asset('assets/js/flowbite.min.js') }}"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
