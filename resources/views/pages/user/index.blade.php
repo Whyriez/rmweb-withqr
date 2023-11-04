@@ -69,11 +69,8 @@
             </div>
 
             @if (session()->has('idMeja'))
-                {{-- <form action="{{ route('hapusSession') }}" method="POST">
-                    @csrf --}}
                 <input type="text" class="text-black" value="{{ session('idMeja') }}">
                 <button type="submit" class="text-white">Hapus</button>
-                {{-- </form> --}}
             @endif
 
             <div
@@ -91,15 +88,6 @@
                             {{ $k->name }}
                         </a>
                     @endforeach
-
-                    {{-- <a href="#"
-                        class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
-                        Makanan
-                    </a>
-                    <a href="#"
-                        class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700  dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
-                        Minuman
-                    </a> --}}
                 </div>
             </div>
             <!-- wrapper menu -->

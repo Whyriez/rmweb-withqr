@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark">
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -23,51 +23,21 @@
 </head>
 
 <body class="bg-white dark:bg-gray-900 overflow-hidden">
-
-
     <main>
         <div class="px-4 pt-6">
             @yield('content')
-            <div class="flex justify-center">
-            </div>
         </div>
     </main>
-    </div>
-    </div>
-
-    {{-- <div class="flex">
-        @include('components.admin.navbar')
-
-        <div class="flex">
-            @include('components.admin.sidebar')
-
-            <main class="flex-grow p-4">
-                @yield('content')
-            </main>
-        </div>
-
-        @include('components.admin.footer')
-    </div> --}}
-
-
     <script src="{{ asset('assets/js/flowbite.min.js') }}"></script>
     <script>
-        const sidebarBackdrop = document.getElementById('sidebarBackdrop');
-        const navbarDropdown = document.getElementById('navbar-dropdown');
-        document.getElementById('toggle-nav').addEventListener('click', function() {
-            navbarDropdown.classList.toggle('hidden');
-            sidebarBackdrop.classList.toggle('hidden');
-        });
-        document.getElementById('toggleSidebarMobileSearch').addEventListener('click', function() {
-            navbarDropdown.classList.toggle('hidden');
-            sidebarBackdrop.classList.toggle('hidden');
-        });
-        document.getElementById('sidebarBackdrop').addEventListener('click', function() {
-            navbarDropdown.classList.toggle('hidden');
-            sidebarBackdrop.classList.toggle('hidden');
+        document.addEventListener('DOMContentLoaded', function() {
+            const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+            if (isDarkMode) {
+                document.documentElement.classList.add(
+                    'dark');
+            }
         });
     </script>
-
 </body>
 
 </html>

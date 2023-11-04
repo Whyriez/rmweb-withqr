@@ -8,7 +8,7 @@
             <!-- Modal header -->
             <div class="flex items-start justify-between p-5 border-b rounded-t dark:border-gray-700">
                 <h3 class="text-xl font-semibold dark:text-white">
-                    Table User
+                    Tambah Menu
                 </h3>
 
                 <button type="button"

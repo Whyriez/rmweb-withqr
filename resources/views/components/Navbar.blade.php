@@ -1,18 +1,23 @@
-<nav class="bg-neutral-200 border-gray-200 dark:bg-gray-900">
+<nav class="bg-white border-gray-200 dark:bg-gray-900">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="#" class="flex items-center">
             <span class="self-center text-2xl whitespace-nowrap dark:text-white font-inter font-black">WONGSOLO</span>
         </a>
-        <div class="flex justify-end gap-4 md:order-last">
-            <a a href="{{ url('cart') }}" class="">
+        <div class="flex justify-end align-items-center gap-4 md:order-last">
+            <button id="toggleDarkMode" type="button"
+                class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                <i class="fa-solid fa-circle-half-stroke"></i>
+            </button>
+            <a href="{{ url('cart') }}">
                 <div
-                    class="max-w-sm p-2 h-8 hover:bg-stone-300 bg-stone-200 rounded-lg shadow-inner flex justify-center items-center dark:bg-slate-800 dark:hover:bg-blue-900">
+                    class="max-w-sm p-2 h-10 hover:bg-stone-300 bg-stone-200 rounded-lg shadow-inner flex justify-center items-center dark:bg-slate-800 dark:hover:bg-blue-900">
                     <img src="{{ asset('assets/img/bag-frame.svg') }}" alt="" class="dark:hidden" /><img
                         src="{{ asset('assets/img/bag.svg') }}" alt="" class="hidden dark:block" />
-                    <h1 class="text-white text-sm ml-1">{{ session('cart') ? count(session('cart')) : '' }}</h1>
+                    <h1 class="dark:text-white text-black text-sm ml-1">
+                        {{ session('cart') ? count(session('cart')) : '' }}</h1>
                 </div>
-
             </a>
+
         </div>
         <button data-collapse-toggle="navbar-default" type="button"
             class="inline-flex items-center  p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -48,3 +53,21 @@
         </div>
     </div>
 </nav>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+        if (isDarkMode) {
+            document.documentElement.classList.add(
+                'dark');
+        }
+    });
+
+    document.getElementById('toggleDarkMode').addEventListener('click', function() {
+        document.documentElement.classList.toggle(
+            'dark');
+        const isDarkMode = document.documentElement.classList.contains('dark');
+        localStorage.setItem('darkMode', isDarkMode ? 'enabled' : 'disabled');
+    });
+</script>

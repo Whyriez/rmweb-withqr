@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark">
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -58,21 +58,6 @@
             </main>
         </div>
     </div>
-
-    {{-- <div class="flex">
-        @include('components.admin.navbar')
-
-        <div class="flex">
-            @include('components.admin.sidebar')
-
-            <main class="flex-grow p-4">
-                @yield('content')
-            </main>
-        </div>
-
-        @include('components.admin.footer')
-    </div> --}}
-
 
     <script src="{{ asset('assets/js/flowbite.min.js') }}"></script>
     <script>

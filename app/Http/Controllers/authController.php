@@ -37,17 +37,18 @@ class authController extends Controller
         $password = $request->password;
 
 
-        if(Auth::attempt(['email' => $email, 'password' => $password])){
+        if (Auth::attempt(['email' => $email, 'password' => $password])) {
             // $request->session()->regenerate();
             $user = Auth::user();
             return redirect('admin')->with(['user' => $user]);
-        }else{
+        } else {
             return redirect('login')->withErrors('Email dan Password yang anda masukkan tidak valid');
         }
     }
 
-    public function logout(Request $request){
+    public function logout(Request $request)
+    {
         Auth::logout();
-        return redirect('login');
+        return redirect('/');
     }
 }
