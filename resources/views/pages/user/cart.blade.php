@@ -29,7 +29,7 @@
                                     </div>
                                     <div class="flex items-center">
                                         <button type="button" data-modal-toggle="delete-cart-{{ $value['id'] }}"
-                                            class="bg-red-900 text-black dark:text-white dark:bg-red-500 p-1 rounded-md font-bold">Hapus</button>
+                                            class="bg-red-900 text-white dark:text-white dark:bg-red-500 p-1 rounded-md font-bold">Hapus</button>
                                         <input type="number" name="jumlah[]"
                                             class="w-14 border border-gray-300 rounded text-center ml-4"
                                             value="{{ $value['jumlah'] }}">

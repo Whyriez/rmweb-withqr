@@ -71,14 +71,6 @@
                                 </div>
                             @enderror
                         </div>
-                        <div class="col-span-6 sm:col-span-3">
-                        </div>
-                        <div class="col-span-6 sm:col-span-3">
-
-                        </div>
-                        <div class="col-span-6">
-
-                        </div>
                     </div>
             </div>
             <!-- Modal footer -->

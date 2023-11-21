@@ -9,7 +9,7 @@
     <base href="{{ \URL::to('/') }}">
 
     <!-- fontawsome -->
-    <link rel="stylesheet" href="https://cdn.fontawesome.com/6.0.0-beta3/cs s/all.min.css">
+    <link rel="stylesheet" href="https://cdn.fontawesome.com/6.0.0-beta3/css/all.min.css">
 
 
     <link rel="icon" type="image/x-icon" href="{{ asset('faviconnsss.ico') }}">
@@ -17,8 +17,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-    {{-- @vite('resources/css/app.css') --}}
-    <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+    @vite('resources/css/app.css')
+    {{-- <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}"> --}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />

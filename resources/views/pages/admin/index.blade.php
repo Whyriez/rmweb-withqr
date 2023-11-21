@@ -27,32 +27,32 @@
                             @php
                                 $totalAmount = 0;
                             @endphp
-                            @foreach ($pesanan as $item)
-                                @foreach ($item->detailTransaksi as $detail)
-                                    <tr>
-                                        <td class="px-4 py-2 text-left text-gray-900 dark:text-white">{{ $loop->iteration }}
-                                        </td>
-                                        <td class="px-4 py-2 text-left text-gray-900 dark:text-white">
-                                            {{ $detail->menu->Menu }}
-                                        </td>
-                                        <td class="px-4 py-2 text-left text-gray-900 dark:text-white">{{ $detail->qty }}
-                                        </td>
-                                        <td class="px-4 py-2 text-left text-gray-900 dark:text-white">{{ $detail->meja }}
-                                        </td>
-                                        <td class="px-4 py-2 font-semibold text-left text-gray-900 dark:text-white">
-                                            {{ $detail->menu->harga }}</td>
-                                        <td class="px-4 py-2 font-semibold text-left text-gray-900 dark:text-white">
-                                            <a href="{{ url('pesanan/update/' . $item->id) }}"
-                                                class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
-                                                Selesai
-                                            </a>
-                                        </td>
-                                    </tr>
+                            @foreach ($pesanan as $key => $item)
+                                {{-- @foreach ($item->detailTransaksi as $detail) --}}
+                                <tr>
+                                    <td class="px-4 py-2 text-left text-gray-900 dark:text-white">{{ $loop->iteration }}
+                                    </td>
+                                    <td class="px-4 py-2 text-left text-gray-900 dark:text-white">
+                                        {{ $item->Menu }}
+                                    </td>
+                                    <td class="px-4 py-2 text-left text-gray-900 dark:text-white">{{ $item->qty }}
+                                    </td>
+                                    <td class="px-4 py-2 text-left text-gray-900 dark:text-white">{{ $item->meja }}
+                                    </td>
+                                    <td class="px-4 py-2 font-semibold text-left text-gray-900 dark:text-white">
+                                        {{ $item->harga }}</td>
+                                    <td class="px-4 py-2 font-semibold text-left text-gray-900 dark:text-white">
+                                        <a href="{{ url('pesanan/update/' . $item->id) }}"
+                                            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:ring-yellow-300 dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
+                                            Selesai
+                                        </a>
+                                    </td>
+                                </tr>
 
-                                    @php
-                                        $totalAmount += $detail->menu->harga;
-                                    @endphp
-                                @endforeach
+                                @php
+                                    $totalAmount += $item->harga;
+                                @endphp
+                                {{-- @endforeach --}}
                             @endforeach
                         </tbody>
                         <tfoot>

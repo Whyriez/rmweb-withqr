@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('no_pesanan')->unique();
             $table->date('tgl_order');
-            $table->bigInteger('total_bayar'); 
-            $table->string('status_pesanan');
+            $table->bigInteger('total_bayar');
             $table->timestamps();
         });
     }

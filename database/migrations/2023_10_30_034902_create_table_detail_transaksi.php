@@ -15,16 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('no_psn');
             $table->integer('id_menu');
-            $table->integer('qty'); 
-            $table->string('meja'); 
+            $table->integer('qty');
+            $table->string('meja');
+            $table->string('status_pesanan');
             $table->timestamps();
 
             $table->foreign('no_psn')
-            ->references('no_pesanan')
-            ->on('table_transaksi');
-
-            
-            
+                ->references('no_pesanan')
+                ->on('table_transaksi');
         });
     }
 

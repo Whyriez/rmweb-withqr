@@ -33,9 +33,14 @@
             <ul
                 class="font-medium flex flex-col gap-1 p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-neutral-200 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
-                    <a href="#menu"
+                    <a href="{{ url('/') }}"
                         class="block py-2 pl-3 pr-4 text-gray-900 rounded font-inter font-black text-md hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-900 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                         aria-current="page">Menu</a>
+                </li>
+                <li>
+                    <a href="{{ url('about') }}"
+                        class="block py-2 pl-3 pr-4 text-gray-900 rounded font-inter font-black text-md hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-900 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                        aria-current="page">Tentang Kami</a>
                 </li>
                 @if (Auth::user())
                     <li>

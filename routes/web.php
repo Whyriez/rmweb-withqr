@@ -51,11 +51,14 @@ Route::group(['middleware' => 'auth'], function () {
 
 //user
 Route::get('/', [UserController::class, 'index'])->name('home');
+Route::get('/about', [UserController::class, 'about'])->name('about');
 Route::get('/id/{id}', [UserController::class, 'index'])->name('homeid');
 Route::get('/cart', [UserController::class, 'viewCart'])->name('cart');
 Route::get('/cart/store/{id}', [UserController::class, 'cartStore'])->name('cart/store/{id}');
 Route::get('/cart/delete/{id}', [UserController::class, 'cartDelete'])->name('cart/delete/{id}');
 Route::put('/cart/update', [UserController::class, 'cartUpdate'])->name('cart/update');
 Route::get('/cart/checkout', [UserController::class, 'cartCheckout'])->name('cart/checkout');
+
+Route::get('/cart/invoice', [UserController::class, 'generateInvoice'])->name('cart/invoice');
 
 Route::get('/kategori/{id}', [UserController::class, 'showKategori'])->name('kategori/{id}');

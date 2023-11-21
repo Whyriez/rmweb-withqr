@@ -69,7 +69,7 @@
             </div>
 
             @if (session()->has('idMeja'))
-                <input type="text" class="text-black" value="{{ session('idMeja') }}">
+                <input type="hidden" class="text-black" value="{{ session('idMeja') }}">
                 <button type="submit" class="text-white">Hapus</button>
             @endif
 
